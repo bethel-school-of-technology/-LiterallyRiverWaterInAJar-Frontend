@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import Home from './screens/Home';
 import About from './screens/About';
@@ -7,7 +7,20 @@ import Cart from './screens/Cart';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import './index.css' 
 
-const App = () => (
+const App = () => {
+
+  let [postMessage, setPosts] = useState([])
+
+       useEffect(() => {
+
+        fetch('http://localhost:3001/about')
+        .then(data => data.json())
+        .then(data => {
+           setPosts(data)
+        })
+
+      }, []),
+
   <Router>
     <div>
       <ul className="headerThing" style={{ listStyleType: "none" }}>
@@ -33,6 +46,6 @@ const App = () => (
       <Route path="/cart" component={Cart} />
     </div>
   </Router>
-);
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
