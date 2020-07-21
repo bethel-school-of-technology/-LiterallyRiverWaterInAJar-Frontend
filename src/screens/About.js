@@ -15,6 +15,16 @@ const About = () => {
   let newPost = postList.map((post, index) => {
     return <li key={index}>{post.PostBody}</li>;
   });
+  
+  const data = {PostBody:this.state.PostBody}
+
+  handleSubmit = (event) =>{
+    fetch("http://localhost:3001/testimonials/about", {method: 'POST', 
+    body: JSON.stringify(data), 
+    headers {'Content-Type': 'application/json'}})
+      .then(res => res.json())
+      .then();
+    };
 
   return (
     <div>
@@ -45,13 +55,13 @@ const About = () => {
 {/* create function, uses fetch, makes post call to backend, MD?? ex. calling post,  */}
       
       <ul>{newPost}</ul>
-      <form> 
+      <form > 
         <label>
           <h3>Leave A Testimonial</h3>
           <textarea  rows="4" name="PostBody" />
           <br/>
         </label>
-        <input type="submit" value="Submit" />
+        <input onSubmit={handleSubmit} type="submit" value="Submit" />
       </form>
     </div>
   );
