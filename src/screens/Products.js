@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "./Product";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router,Route,Link,useRouteMatch} from "react-router-dom";
 
 const Products = () => {
   const [inventoryList, setInventoryList] = useState([]);
