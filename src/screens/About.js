@@ -10,7 +10,7 @@ const About = () => {
         setPostList(data.posts);
         console.log(data);
       });
-  });
+  }, []);
 
   let newPost = postList.map((post, index) => {
     return <li key={index}>{post.PostBody}</li>;
@@ -41,12 +41,13 @@ const About = () => {
         paragragh about river water. It is a thing blah blah. This is a
         paragragh about river water. It is a thing blah blah.
       </p>
+
+{/* create function, uses fetch, makes post call to backend, MD?? ex. calling post,  */}
+      
       <ul>{newPost}</ul>
-      <form>
+      <form> 
         <label>
           <h3>Leave A Testimonial</h3>
-          <input type="text" name="PostTitle" />
-          <br/>
           <textarea  rows="4" name="PostBody" />
           <br/>
         </label>
