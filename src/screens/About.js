@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 const About = () => {
+  // GET testimonials from database
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/testimonials/about")
-      .then(data => data.json())
+      .then((data) => data.json())
       .then((data) => {
         setPostList(data.posts);
         console.log(data);
@@ -15,20 +16,24 @@ const About = () => {
   let newPost = postList.map((post, index) => {
     return <li key={index}>{post.PostBody}</li>;
   });
-  
-  const data = {PostBody:this.state.PostBody}
 
-  handleSubmit = (event) =>{
-    fetch("http://localhost:3001/testimonials/about", {method: 'POST', 
-    body: JSON.stringify(data), 
-    headers {'Content-Type': 'application/json'}})
-      .then(res => res.json())
-      .then();
-    };
+  // POST testimonials to database
+
+  const [post, setPost] = useState([]);
+  const handleSubmit = (event) => {
+    event.preventDefault()
+      fetch("http://localhost:3001/testimonials/about", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(setPost),
+      })
+        .then((response) => response.json())
+        .then((data) => setPost(data.testimonials));
+  };
 
   return (
     <div>
-      <h2>About</h2>
+      <h2>About Our River Water</h2>
       <p>
         This is a paragragh about river water. It is a thing blah blah. This is
         a paragragh about river water. It is a thing blah blah. This is a
@@ -52,16 +57,17 @@ const About = () => {
         paragragh about river water. It is a thing blah blah.
       </p>
 
-{/* create function, uses fetch, makes post call to backend, MD?? ex. calling post,  */}
-      
+      {/* create function, uses fetch, makes post call to backend, MD?? ex. calling post,  */}
+      <h2>Testimonials</h2>
       <ul>{newPost}</ul>
-      <form > 
+      <br />
+      <form onSubmit={handleSubmit}>
         <label>
           <h3>Leave A Testimonial</h3>
-          <textarea  rows="4" name="PostBody" />
-          <br/>
+          <textarea rows="4" name="PostBody" />
+          <br />
         </label>
-        <input onSubmit={handleSubmit} type="submit" value="Submit" />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );
