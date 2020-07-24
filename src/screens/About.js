@@ -18,7 +18,6 @@ const About = () => {
   });
 
   // POST testimonials to database
-
   const [post, setPost] = useState([]);
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -57,7 +56,6 @@ const About = () => {
         paragragh about river water. It is a thing blah blah.
       </p>
 
-      {/* create function, uses fetch, makes post call to backend, MD?? ex. calling post,  */}
       <h2>Testimonials</h2>
       <ul>{newPost}</ul>
       <br />
