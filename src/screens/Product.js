@@ -3,27 +3,26 @@ import Size from "./Size";
 import { Link, Route } from "react-router-dom";
 
 const Product = ({ match }) => {
-  const [riverList, setriverList] = useState([]);
+  const [riverList, setRiverList] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3001/inventory/products/:id")
       .then((data) => data.json())
       .then((data) => {
-        setriverList(data.inventory);
+        setRiverList(data.inventory);
         console.log(data);
       });
   }, []);
 
-  const displayRiver = () => {
-    riverList.map((inventory, index) => {
+  let displayRiver = riverList.map((inventory, index) => {
       return (
         <li key={index}>
-          <Link to={`${match.url}/${inventory.size}`}>{inventory.size}</Link>
+          <Link to={`${match.url}/${inventory.id}`}>{inventory.size}</Link>
+          <br />
           ,{inventory.description}
         </li>
       );
     });
-  };
 
   return (
     <div>

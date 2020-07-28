@@ -19,23 +19,18 @@ const Products = ({ match }) => {
       });
   }, []);
 
-  const displayInventory = () => {
-    inventoryList.map((inventory, index) => {
-      return (
-        <li key={index}>
-          <Link to={`${match.url}/${inventory.name}`}>
-            {inventory.name}
-          </Link>
-        </li>
-      );
-    });
-  };
+  let displayInventory = inventoryList.map((inventory, index) => {
+    return (
+      <li key={index}>
+        <Link to={`${match.url}/${inventory.name}`}>{inventory.name}</Link>
+      </li>
+    );
+  });
 
   return (
     <div>
       <h2>Our Different Kinds Of River Water That You Can Get</h2>
       <ul>{displayInventory}</ul>
-
       <Route path={`${match.url}/:productId`} component={Product} />
       <Route
         exact

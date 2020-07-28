@@ -20,14 +20,14 @@ const About = () => {
   // POST testimonials to database
   const [post, setPost] = useState([]);
   const handleSubmit = (event) => {
-    event.preventDefault()
-      fetch("http://localhost:3001/testimonials/about", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(setPost),
-      })
-        .then((response) => response.json())
-        .then((data) => setPost(data.testimonials));
+    event.preventDefault();
+    fetch("http://localhost:3001/testimonials/about", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({setPost}),
+    })
+      .then((response) => response.json())
+      .then((data) => setPost(data.testimonials));
   };
 
   return (
@@ -62,11 +62,11 @@ const About = () => {
       <form onSubmit={handleSubmit}>
         <label>
           <h3>Leave A Testimonial</h3>
-          <textarea rows="4" name="PostBody" />
-          <br />
+          <input type="text" name="name" />
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <br />
     </div>
   );
 };
