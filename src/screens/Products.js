@@ -15,14 +15,14 @@ const Products = ({ match }) => {
       .then((data) => data.json())
       .then((data) => {
         setInventoryList(data.inventory);
-        console.log(data);
+        // console.log(data);
       });
   }, []);
 
   let displayInventory = inventoryList.map((inventory, index) => {
     return (
       <li key={index}>
-        <Link to={`${match.url}/${inventory.name}`}>{inventory.name}</Link>
+        <Link to={`${match.url}/${inventory.id}`}>{inventory.name}</Link>
       </li>
     );
   });

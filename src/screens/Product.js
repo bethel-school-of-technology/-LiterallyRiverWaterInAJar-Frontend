@@ -3,31 +3,24 @@ import Size from "./Size";
 import { Link, Route } from "react-router-dom";
 
 const Product = ({ match }) => {
-  const [riverList, setRiverList] = useState([]);
+  const [riverItem, setRiverItem] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/inventory/products/:id")
+    fetch("http://localhost:3001/inventory/products/" + match.params.productId)
       .then((data) => data.json())
       .then((data) => {
-        setRiverList(data.inventory);
-        console.log(data);
+        setRiverItem(data.inventory);
+        console.log(data.inventory);
       });
-  }, []);
-
-  let displayRiver = riverList.map((inventory, index) => {
-      return (
-        <li key={index}>
-          <Link to={`${match.url}/${inventory.id}`}>{inventory.size}</Link>
-          <br />
-          ,{inventory.description}
-        </li>
-      );
-    });
+  }, [match]);
 
   return (
     <div>
-      <h3>{match.params.productId}</h3>
-       <ul style={{ listStyleType: "none" }}>{displayRiver}</ul>
+      <h3>{riverItem.name}</h3>
+      <ul style={{ listStyleType: "none" }}>
+        <Link to={`${match.url}/${riverItem.id}`}>{riverItem.size}</Link>
+        <br />,{riverItem.description}
+      </ul>
       <Route path={`${match.url}/:sizeId`} component={Size} />
       <Route
         exact

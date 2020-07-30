@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const About = () => {
   // GET testimonials from database
@@ -18,16 +19,25 @@ const About = () => {
   });
 
   // POST testimonials to database
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState("");
+  console.log(post);
   const handleSubmit = (event) => {
-    event.preventDefault();
-    fetch("http://localhost:3001/testimonials/about", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({setPost}),
+    // event.preventDefault();
+    const newPost = {
+      postBody: post
+    }
+    axios.post("http://localhost:3001/testimonials/about", {newPost})
+    .then(response => {
+      console.log(response);
     })
-      .then((response) => response.json())
-      .then((data) => setPost(data.testimonials));
+
+    // fetch("http://localhost:3001/testimonials/about", {
+    //   method: "POST",
+    //   // headers: { "Content-Type": "application/json" },
+    //   body: {post: post}
+    // }).then((response) => response.json())
+    // .then(response => console.log(response));
+    // console.log(data.postBody);
   };
 
   return (
@@ -62,8 +72,8 @@ const About = () => {
       <form onSubmit={handleSubmit}>
         <label>
           <h3>Leave A Testimonial</h3>
-          <input type="text" name="name" />
         </label>
+        <input onChange={e => setPost(e.target.value)} type="text" name="postBody" />
         <input type="submit" value="Submit" />
       </form>
       <br />

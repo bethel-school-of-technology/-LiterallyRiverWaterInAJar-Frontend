@@ -17,7 +17,7 @@ const Size = ({ match }) => {
         sizeList.map((inventory, index) => {
           return (
             <li key={index}>
-              <Link to={"./Cart"}>Buy Now: {inventory.price}</Link>
+              <Link to={`${match.url}/${inventory.id}`}>Buy Now: {inventory.price}</Link>
             </li>
           );
         });
