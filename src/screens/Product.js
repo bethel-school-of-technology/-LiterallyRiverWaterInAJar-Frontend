@@ -18,8 +18,9 @@ const Product = ({ match }) => {
     <div>
       <h3>{riverItem.name}</h3>
       <ul style={{ listStyleType: "none" }}>
+        {riverItem.description}
+        <br />
         <Link to={`${match.url}/${riverItem.id}`}>{riverItem.size}</Link>
-        <br />,{riverItem.description}
       </ul>
       <Route path={`${match.url}/:sizeId`} component={Size} />
       <Route

@@ -24,12 +24,13 @@ const About = () => {
   const handleSubmit = (event) => {
     // event.preventDefault();
     const newPost = {
-      postBody: post
-    }
-    axios.post("http://localhost:3001/testimonials/about", {newPost})
-    .then(response => {
-      console.log(response);
-    })
+      postBody: post,
+    };
+    axios
+      .post("http://localhost:3001/testimonials/about", { newPost })
+      .then((response) => {
+        console.log(response);
+      });
 
     // fetch("http://localhost:3001/testimonials/about", {
     //   method: "POST",
@@ -67,13 +68,17 @@ const About = () => {
       </p>
 
       <h2>Testimonials</h2>
-      <ul>{newPost}</ul>
+      <ul style={{ listStyleType: "none" }}>{newPost}</ul>
       <br />
       <form onSubmit={handleSubmit}>
         <label>
           <h3>Leave A Testimonial</h3>
         </label>
-        <input onChange={e => setPost(e.target.value)} type="text" name="postBody" />
+        <input
+          onChange={(e) => setPost(e.target.value)}
+          type="text"
+          name="postBody"
+        />
         <input type="submit" value="Submit" />
       </form>
       <br />
