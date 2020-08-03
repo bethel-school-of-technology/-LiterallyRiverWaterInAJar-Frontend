@@ -12,7 +12,7 @@ const Home = () => (
       <h1>Welcome</h1>
       <p>
         <div>
-          Welcome to LiterallyRiverWaterInAJar.com We are the only resource (that we
+          Welcome to Literally River Water In A Jar. We are the only resource (that we
           know of) where you can literelly buy river water in a jar, and have it
           shipped straight to you for a fee. Now we know you know what rivers are.
           And we know you know what river water is.
@@ -20,11 +20,10 @@ const Home = () => (
         <br />
         <h3 className="center">"the only resource (that we know of)"</h3>
         <br />
-        So here it goes; Of course you
-        can just go to any old river and bring a jar and fill it with water.
-        Great! Now you have that river water in a jar that you always wanted! But what if
-        you wanted that same river water, but you want to BUY it. Well, that's
-        where we come in.
+        Now, of course you can just go to any old river and bring a jar and fill it with water.
+        Great! Now you have that river water in a jar that you've always wanted. But what if
+        you wanted that same river water in jar, but you want to BUY it? Well, that's
+        where we come in. Learn more <Link to="/about">here</Link>.
       </p>
 
       <Carousel interval="4000" fade="true" >

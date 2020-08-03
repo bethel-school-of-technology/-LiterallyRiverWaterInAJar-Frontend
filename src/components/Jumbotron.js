@@ -7,7 +7,7 @@ const Jumbotron = () => (
     <div className="overlay"></div>
     <Container>
       <h1 className="h1White">It's Literally In A Jar</h1>
-      <p>That River</p>
+      <p>Love That River</p>
     </Container>
   </Jumbo>
 )
