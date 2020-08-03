@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Size from "./Size";
 import { Link, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 const Product = ({ match }) => {
   const [riverItem, setRiverItem] = useState([]);
@@ -15,6 +16,7 @@ const Product = ({ match }) => {
   }, [match]);
 
   return (
+    <Container>
     <div>
       <h3>{riverItem.name}</h3>
       <ul style={{ listStyleType: "none" }}>
@@ -29,6 +31,7 @@ const Product = ({ match }) => {
         render={() => <h3>Please select a size.</h3>}
       />
     </div>
+    </Container>
   );
 };
 

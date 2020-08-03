@@ -1,7 +1,25 @@
 .link {
-  color: rgb(49, 105, 226);
+  text-decoration: none;
+}
+
+.link:link {
+  text-decoration: none;
+}
+
+.link:visited {
+  text-decoration: none;
 }
 
 .link:hover {
-  color: white;
+  color: rgb(184, 212, 207);
+  text-decoration: none;
 }
+
+  .brandImg {
+    height: 24px;
+    width: 24px;
+    /* top: 55px; */
+  }
+  .navColor {
+    background-color: #494747;
+  }

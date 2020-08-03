@@ -6,6 +6,8 @@ import {
   Link,
   useRouteMatch,
 } from "react-router-dom";
+import Jumbotron from "../components/JumboProduct";
+import { Container } from "react-bootstrap";
 
 const Products = ({ match }) => {
   const [inventoryList, setInventoryList] = useState([]);
@@ -28,6 +30,9 @@ const Products = ({ match }) => {
   });
 
   return (
+    <React.Fragment>
+      <Jumbotron />
+    <Container>
     <div>
       <h2>Our Different Kinds Of River Water That You Can Get</h2>
       <ul>{displayInventory}</ul>
@@ -38,6 +43,8 @@ const Products = ({ match }) => {
         render={() => <h3>Please select some river water.</h3>}
       />
     </div>
+      </Container>
+    </React.Fragment>
   );
 };
 

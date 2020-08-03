@@ -20,6 +20,7 @@ const Size = ({ match }) => {
         ${sizeItem.price}
         <br />
         <Link to={`${match.url}/${sizeItem.id}`}>Buy Some River Water Now!</Link>
+        {/* <a href="http://localhost:3000/cart">Buy Some River Water Now!</a> */}
         <br />
       </ul>
     </div>

@@ -8,7 +8,7 @@ import { Nav, Navbar, Image } from "react-bootstrap";
 
 
 
-const NavBar = () => {
+const Footer = () => {
 
 
   // useEffect(() => {
@@ -37,4 +37,4 @@ const NavBar = () => {
 // const mapStateToProps = state => ({
 //   basketProps: state.basketState
 // })
-export default NavBar;
+export default Footer;
