@@ -15,12 +15,13 @@ const Size = ({ match }) => {
 
   return (
     <div>
-      <h3>{sizeItem.size}</h3>
+      
       <ul style={{ listStyleType: "none" }}>
-        ${sizeItem.price}
+        <h4>{sizeItem.size1}: ${sizeItem.price1}.20 </h4>
+        <h4>{sizeItem.size2}: ${sizeItem.price2}.00</h4>
         <br />
-        <Link to={`${match.url}/${sizeItem.id}`}>Buy Some River Water Now!</Link>
-        {/* <a href="http://localhost:3000/cart">Buy Some River Water Now!</a> */}
+        {/* <Link to={`${match.url}/${sizeItem.id}`}>Buy Some River Water Now!</Link> */}
+        <a href="http://localhost:3000/cart"><button type="button" className="btn btn-success">Buy Some River Water Now!</button></a>
         <br />
       </ul>
     </div>

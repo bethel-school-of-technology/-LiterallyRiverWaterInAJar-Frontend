@@ -19,7 +19,8 @@ const About = () => {
   }, []);
 
   let newPost = postList.map((post, index) => {
-    return <li key={index}>{post.PostBody}</li>;
+    return <li key={index}><br />{post.PostBody} </li>;
+    
   });
 
   // POST testimonials to database
@@ -55,7 +56,7 @@ const About = () => {
             <p>
               <div>
                 Building a successful business is all about identifying a need in the market and
-                effectively filling that need. In the summer of 2020, that is exactly what we did.
+                effectively filling that need. That's exactly what we did.
           </div>
               <br />
               <div>

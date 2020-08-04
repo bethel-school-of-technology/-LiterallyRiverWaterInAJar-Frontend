@@ -20,7 +20,7 @@ const Home = () => (
         <br />
         <h3 className="center">"the only resource (that we know of)"</h3>
         <br />
-        Now, of course you can just go to any old river and bring a jar and fill it with water.
+        So get this. You could just go to any old river and bring a jar and fill it with water.
         Great! Now you have that river water in a jar that you've always wanted. But what if
         you wanted that same river water in jar, but you want to BUY it? Well, that's
         where we come in. Learn more <Link to="/about">here</Link>.
@@ -32,6 +32,7 @@ const Home = () => (
             className="d-block w-100"
             src="../../pictures/river1 Cropped.jpg"
             alt="First slide"
+           
           />
           
         </Carousel.Item>

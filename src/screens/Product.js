@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Size from "./Size";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import "./Products.css";
 
 const Product = ({ match }) => {
   const [riverItem, setRiverItem] = useState([]);
@@ -17,20 +18,33 @@ const Product = ({ match }) => {
 
   return (
     <Container>
-    <div>
-      <h3>{riverItem.name}</h3>
-      <ul style={{ listStyleType: "none" }}>
-        {riverItem.description}
-        <br />
-        <Link to={`${match.url}/${riverItem.id}`}>{riverItem.size}</Link>
-      </ul>
-      <Route path={`${match.url}/:sizeId`} component={Size} />
-      <Route
-        exact
-        path={match.url}
-        render={() => <h3>Please select a size.</h3>}
-      />
-    </div>
+      
+        <h3>{riverItem.name}</h3>
+        <div style={{ listStyleType: "none" }}>
+          <div>{riverItem.description2}</div>
+          <br />
+
+          <div className="buttonCen">
+            <Link to={`${match.url}/${riverItem.id}`}>
+              {/* <button type="button" class="btn btn-secondary"><h4></h4></button> */}
+
+              <button type="button" className="btn btn-warning">Sizes</button>
+
+            </Link>
+          </div>
+
+
+        
+
+        <Route path={`${match.url}/:sizeId`} component={Size} />
+
+
+        <Route
+          exact
+          path={match.url}
+        // render={() => <h3>Please select a size.</h3>}
+        />
+      </div>
     </Container>
   );
 };
