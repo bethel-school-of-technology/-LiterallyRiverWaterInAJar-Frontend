@@ -26,15 +26,15 @@ const Products = ({ match }) => {
 
         <div key={index}>
           <Row>
-            <Col className="buttonCen" >
+            <Col sm={4} xs={12} className="buttonCen" >
               <Link to={`${match.url}/${inventory.id}`}>
                 <br /> <button type="button" className="btn btn-info">{inventory.name}</button>
               </Link>
             </Col>
       
-            <Col ><br />{inventory.description1}</Col>
+            <Col sm={4} ><br /><div className="centerStuff">{inventory.description1}</div></Col>
 
-            <Col><Image className="cup buttonCen" src={inventory.image}></Image></Col>
+            <Col sm={4}><div className="centerStuff"><Image className="cup buttonCen" src={inventory.image}></Image></div></Col>
           </Row>
 
         </div>
@@ -62,6 +62,8 @@ const Products = ({ match }) => {
             render={() => <h3>Please select some river water.</h3>}
           />
         </div>
+        <br/>
+        <br/>
       </Container>
     </React.Fragment>
   );

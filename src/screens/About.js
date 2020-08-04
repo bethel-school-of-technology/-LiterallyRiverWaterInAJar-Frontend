@@ -19,7 +19,7 @@ const About = () => {
   }, []);
 
   let newPost = postList.map((post, index) => {
-    return <li key={index}><br />{post.PostBody} </li>;
+    return <li key={index}><br /><br />{post.PostBody} </li>;
     
   });
 
@@ -47,7 +47,7 @@ const About = () => {
   };
 
   return (
-    <React.Fragment>
+    <React.Fragment >
       <JumboAbout />
       <Container >
         <h2>Us</h2>
@@ -123,6 +123,8 @@ const About = () => {
             <Col sm={3}></Col>
           </Row>
         </form>
+        <div></div>
+        <br/>
         <br />
 
       </Container>

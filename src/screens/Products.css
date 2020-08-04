@@ -1,3 +1,10 @@
+/* @media screen and (max-width: 420px) {
+  .btn {
+    display: inline;
+    text-align: center;
+  }
+} */
+
 .cup {
   width: 50px;
   height: 50px;
@@ -15,6 +22,10 @@
   justify-content: center;
 }
 
-.buttonCen{
+.buttonCen {
+  text-align: center;
+}
+
+.centerStuff{
   text-align: center;
 }

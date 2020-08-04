@@ -26,7 +26,7 @@ const NavBar = () => {
 
           <Nav.Item><Nav.Link href="/products"><Link className="link" to="/products">Products</Link></Nav.Link></Nav.Item>
 
-          <Nav.Item><Nav.Link href="/cart"><Link className="link" to="/cart">Shopping Cart</Link></Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/cart"><Link className="link" to="/cart">Cart <Image className="bag" src="../../pictures/sale.png" /></Link></Nav.Link></Nav.Item>
         </Nav>
 
       </Navbar.Collapse>

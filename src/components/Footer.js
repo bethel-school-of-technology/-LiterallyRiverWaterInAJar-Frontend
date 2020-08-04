@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./Footer.css";
 import { Nav, Navbar, Image } from "react-bootstrap";
 
 // import { connect } from "react-redux";
@@ -16,20 +16,21 @@ const Footer = () => {
   // }, [])
 
   return (
-    <Navbar className="navColor" expand="lg">
-      <Navbar.Brand><Link className="link" to="/">Literally River Water <Image src="../../pictures/mason-jar.png" className="brandImg" /></Link></Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar fixed="bottom" className="navColors" expand="lg">
+      <Navbar.Brand>
+        <Link className="links" to="/about">About </Link> | <Link className="links" to="/products"> Products</Link> | <a className="links" href="#top">To Top</a>
+        </Navbar.Brand>
+      
+        <Nav className="ml-auto">
+          
+          <Nav.Item><Nav.Link href="/contact"><Link className="links" to="/contact">Contact</Link></Nav.Link></Nav.Item>
 
-        <Nav className="ml-auto"><Nav.Item><Nav.Link href="/"><Link className="link" to="/">Home</Link></Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/about"><Link className="link" to="/about">About</Link></Nav.Link></Nav.Item>
+         
 
-          <Nav.Item><Nav.Link href="/products"><Link className="link" to="/products">Products</Link></Nav.Link></Nav.Item>
-
-          <Nav.Item><Nav.Link href="/cart"><Link className="link" to="/cart">Shopping Cart</Link></Nav.Link></Nav.Item>
+          
         </Nav>
 
-      </Navbar.Collapse>
+     
 
     </Navbar>
   )

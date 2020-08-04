@@ -25,3 +25,20 @@
   text-decoration: none;
   color: #707070;
 }
+
+.here {
+  text-decoration: none;
+}
+
+.here:link {
+  text-decoration: none;
+}
+
+.here:visited {
+  text-decoration: none;
+}
+
+.here:hover {
+  color: rgb(184, 212, 207);
+  text-decoration: none;
+}
